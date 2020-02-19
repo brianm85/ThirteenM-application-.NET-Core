@@ -1,0 +1,226 @@
+﻿@model CheckAPIModel
+@{
+    ViewData["Title"] = "Api";
+    var modeldata = Model;
+        var selectList = new SelectList(
+        new List<SelectListItem>
+        {
+                new SelectListItem {Text = "US Dollor", Value = "USD"},
+                new SelectListItem {Text = "Euro", Value = "Euro"},
+                new SelectListItem {Text = "British Pound", Value = "BPD"},
+                new SelectListItem {Text = "Aus Dollor", Value = "AUD"},
+        }, "Value", "Text");
+}
+
+<h2>Api</h2>
+
+<div class="sidenav">
+    <ul class="sidemenu">
+        <li><button class="buttonblock" onclick="showDictionary()">Dictionary</button></li>
+        <li><button class="buttonblock" onclick="showCurrency()">Currency</button></li>
+        <li><button class="buttonblock" onclick="showTravel()">Travel</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("NewsApi", "ApiController")'">News</button></li>
+        <li><button class="buttonblock" onclick="showPremResults()">Results</button></li>
+    </ul>
+</div>
+
+<div class="textbox" id="DictionaryTextBox" display="none">
+    <h3 class="centreheader" id="DictionaryApi"><u>Dictionary</u></h3>
+    <br />
+    <div id="divdisplayDictionary">
+        @using (Html.BeginForm("DictionaryApi", "Api", FormMethod.Post))
+        {
+            <table>
+                <tr>@Html.LabelFor(m => m.WordToSearch)</tr>
+                <tr>@Html.TextBoxFor(m => m.WordToSearch)</tr>
+            </table>
+
+            <input type="submit" value="Search" />
+        }
+        @if (modeldata?.DictionaryData != null)
+        {
+            //call the same load as side menu from JS
+            <h3>@Model.DictionaryData.Lexical</h3>
+
+            <ul style="list-style-type:circle;">
+                @foreach (var item in modeldata.DictionaryData.Definitions)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        }
+    </div>
+</div>
+<div class="textbox" id="CurrencyTextBox">
+    <h3 class="centreheader" id="CurrencyApi"><u>Currency</u></h3>
+    <br />
+    <div id="divdisplayCurrency">
+        @using (Html.BeginForm("CurrencyApi", "Api", FormMethod.Post))
+        {
+            <div>
+                <span>
+                    @Html.DropDownListFor(m => m.CurrencyToConvert,
+                        selectList,
+                        "Convert From")
+
+                    @Html.DropDownListFor(m => m.CurrencyConverted,
+                        selectList,
+                        "Convert To")
+
+                    @Html.LabelFor(m => m.AmmountToConvert)
+                    @Html.TextBoxFor(m => m.AmmountToConvert)
+
+                    <input type="submit" value="Currency" />
+                </span>
+            </div>            
+        }
+    </div>
+</div>
+<div class="textbox" id="NewsTextBox">
+    <h3 class="centreheader" id="NewsApi"><u>News</u></h3>
+    <br />
+    <div id="divdisplayNews">
+        @if (modeldata?.NewsData != null)
+        {
+            @foreach (var item in modeldata.NewsData)
+            {
+                <h3>@item.Title</h3>
+                <p>@item.Description</p>
+                <p>@item.Content</p>
+                <p>@item.Author - @item.Source</p>
+            }
+            <script>showNews();</script>
+        }
+    </div>
+</div>
+<div class="textbox" id="TravelTextBox">
+    <h3 class="centreheader" id="TravelApi"><u>Travel</u></h3>
+    <br />
+    <div id="divdisplayTravel">
+        @using (Html.BeginForm("TravelApi", "Api", FormMethod.Post))
+        {
+            @Html.LabelFor(m => m.BusStation)
+            @Html.TextBoxFor(m => m.BusStation)
+
+            @Html.LabelFor(m => m.TrainStation)
+            @Html.TextBoxFor(m => m.TrainStation)
+
+            <input type="submit" value="Travel" />
+        }
+        @if (modeldata?.TrainData != null)
+        {
+            <br />
+            <table style="width:100%">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>Train Date</th>
+                        <th>Origin</th>
+                        <th>Orign Time</th>
+                        <th>Destination</th>
+                        <th>Destination Time</th>
+                        <th>Status</th>
+                        <th>Last Location</th>
+                        <th>Due In</th>
+                        <th>Expected Arival</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.TrainData)
+                    {
+                        <tr>
+                            <td>@item.TrainDate</td>
+                            <td>@item.Origin</td>
+                            <td>@item.OrignTime</td>
+                            <td>@item.Destination</td>
+                            <td>@item.DestinationTime</td>
+                            <td>@item.Status</td>
+                            <td>@item.LastLocation</td>
+                            <td>@item.DueIn</td>
+                            <td>@item.ExpectedArival</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else if (modeldata?.BusData != null)
+        {
+            <br />
+            <table style="width:100%">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>Full Name</th>
+                        <th>Longitude</th>
+                        <th>Latitude</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.BusData.Fullname</td>
+                        <td>@Model.BusData.Longitude</td>
+                        <td>@Model.BusData.Latitude</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <table style="width:100%">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>Couriour</th>
+                        <th>Routes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.BusData.Name</td>
+                        @foreach (var item in Model.BusData.RouteNumbers)
+                        {
+                            <td>@item,</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        document.getElementById("TravelTextBox").style.display = "block";
+        document.getElementById("CurrencyTextBox").style.display = "none";
+        document.getElementById("DictionaryTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "none";
+    })
+
+    function showTravel() {
+        document.getElementById("TravelTextBox").style.display = "block";
+        document.getElementById("CurrencyTextBox").style.display = "none";
+        document.getElementById("DictionaryTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "none";
+    }
+
+    function showCurrency() {
+        document.getElementById("CurrencyTextBox").style.display = "block";
+        document.getElementById("DictionaryTextBox").style.display = "none";
+        document.getElementById("TravelTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "none";
+    }
+
+    function showDictionary() {
+        document.getElementById("CurrencyTextBox").style.display = "none";
+        document.getElementById("DictionaryTextBox").style.display = "block";
+        document.getElementById("TravelTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "none";
+    }
+
+    function showNews() {
+        document.getElementById("CurrencyTextBox").style.display = "none";
+        document.getElementById("DictionaryTextBox").style.display = "none";
+        document.getElementById("TravelTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "block";
+
+
+    }
+</script>
+
+

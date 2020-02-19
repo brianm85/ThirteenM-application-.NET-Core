@@ -1,0 +1,15 @@
+﻿@model CheckAPIModel
+<div class="textbox" id="TravelApi">
+    <h3 class="centreheader"><u>Travel</u></h3>
+    <br />
+    @using (Html.BeginForm("TravelApi", "Api", FormMethod.Post))
+    {
+        @Html.LabelFor(m => m.BusStation)
+        @Html.TextBoxFor(m => m.BusStation)
+
+        @Html.LabelFor(m => m.TrainStation)
+        @Html.TextBoxFor(m => m.TrainStation)
+
+        <input type="submit" value="Travel" />
+    }
+</div>

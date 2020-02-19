@@ -1,0 +1,35 @@
+C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\Brians Website.deps.json
+C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\Brians Website.runtimeconfig.json
+C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\Brians Website.runtimeconfig.dev.json
+C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\Brians Website.dll
+C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\Brians Website.pdb
+C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\Brians Website.Views.dll
+C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\Brians Website.Views.pdb
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.csprojAssemblyReference.cache
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.csproj.CoreCompileInputs.cache
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.RazorAssemblyInfo.cache
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.RazorAssemblyInfo.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.AssemblyInfoInputs.cache
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.AssemblyInfo.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.TagHelpers.input.cache
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.TagHelpers.output.cache
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.RazorCoreGenerate.cache
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\About\About.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Api\Api.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Contact\Contact.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Games\Games.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CurrencyApi.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_DictionaryApi.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_TravelApi.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\Visuals\Visuals.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.RazorTargetAssemblyInfo.cache
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.RazorTargetAssemblyInfo.cs
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.Views.pdb
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.dll
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.pdb
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\Brians Website.csproj.CopyComplete

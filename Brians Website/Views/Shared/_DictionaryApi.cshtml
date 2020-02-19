@@ -1,0 +1,14 @@
+﻿@model CheckAPIModel
+<div class="textbox" id="DictionaryApi">
+    <h3 class="centreheader"><u>Dictionary</u></h3>
+    <br />
+    <div id="divdisplayDictionary">
+        @using (Html.BeginForm("DictionaryApi", "Api", FormMethod.Post))
+        {
+            @Html.LabelFor(m => m.WordToSearch)
+            @Html.TextBoxFor(m => m.WordToSearch)
+
+            <input type="submit" value="Dictionary" />
+        }
+    </div>
+</div>
