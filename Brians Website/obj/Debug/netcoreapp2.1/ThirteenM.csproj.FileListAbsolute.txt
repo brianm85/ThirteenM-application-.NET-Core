@@ -5,7 +5,6 @@ C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.
 C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\ThirteenM.pdb
 C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\ThirteenM.Views.dll
 C:\Users\mitch\source\repos\Brians Website\Brians Website\bin\Debug\netcoreapp2.1\ThirteenM.Views.pdb
-C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\ThirteenM.csprojAssemblyReference.cache
 C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\ThirteenM.csproj.CoreCompileInputs.cache
 C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\ThirteenM.RazorAssemblyInfo.cache
 C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\ThirteenM.RazorAssemblyInfo.cs
@@ -33,3 +32,4 @@ C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.
 C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\ThirteenM.dll
 C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\ThirteenM.pdb
 C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\ThirteenM.csproj.CopyComplete
+C:\Users\mitch\source\repos\Brians Website\Brians Website\obj\Debug\netcoreapp2.1\ThirteenM.csprojAssemblyReference.cache

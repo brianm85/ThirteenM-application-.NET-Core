@@ -55,7 +55,6 @@ namespace Brians_Website.Controllers
         [HttpPost]
         public ActionResult CurrencyApi(CheckAPIModel model)
         {
-            var listofCurrencys = GetCurrencyList();
 
             model.CurrencyList = GetCurrencyList();
 
