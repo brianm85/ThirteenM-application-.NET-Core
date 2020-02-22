@@ -7,7 +7,7 @@
     <div id="homemenucircle">
         <span><span></span></span>
         <div class="wrap">
-            <a asp-area="" asp-controller="Api" asp-action="Api"><div></div></a>
+            <a asp-area="" asp-controller="Api" asp-action="Api"><div></div>API</a>
             <a asp-area="" asp-controller="Contact" asp-action="Contact"><div></div></a>
             <a asp-area="" asp-controller="Games" asp-action="Games"><div></div></a>
             <a asp-area="" asp-controller="Visuals" asp-action="Visuals"><div></div></a>
@@ -48,8 +48,8 @@ a:nth-child(1){
   transform-origin: 110% 110%;
   transition:transform .4s .15s;
 }
-a:nth-child(1) div{
-  background-image:url(../images/ss.png);
+a:nth-child(1) div{ /*API*/
+  background-image:url(../images/ApiVanila.png);
 }
 a:nth-child(2){
   border-radius:0 40vmin 0 0;
@@ -58,7 +58,7 @@ a:nth-child(2){
   transition:transform .4s .2s;
 }
 a:nth-child(2) div{
-  background-image:url('https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg');
+  background-image:url(../images/contactVanila.png);
 }
 a:nth-child(3){
   border-radius:0 0 0 40vmin;
@@ -67,7 +67,7 @@ a:nth-child(3){
   transition:transform .4s .25s;
 }
 a:nth-child(3) div{
-  background-image:url('https://farm7.staticflickr.com/6092/6227418584_d5883b0948.jpg');
+  background-image:url(../images/GamesVanila.png);
 }
 a:nth-child(4){
   border-radius:0 0 40vmin 0;
@@ -76,7 +76,7 @@ a:nth-child(4){
   transition:transform .4s .3s;
 }
 a:nth-child(4) div{
-  background-image: url('https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg');
+  background-image:url(../images/VisualsVanila.png);
 }
 a:nth-child(5){
   width:55%;height:55%;
@@ -86,7 +86,7 @@ a:nth-child(5){
   transform:scale(1);
 }
 a:nth-child(5) div{
-  background-image: url('https://farm4.staticflickr.com/3766/12953056854_b8cdf14f21.jpg');
+  background-image:url(../images/CVImageDark.png);
 }
 span{
   position:relative;

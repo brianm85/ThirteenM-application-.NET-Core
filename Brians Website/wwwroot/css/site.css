@@ -11,12 +11,14 @@ body {
     /*background-position: center center;*/
 }
 
-/*html {
-    background: url(../images/website13mlightgrey.jpg) no-repeat center center fixed;
+html {
+    /*background: url(../images/website13mlightgrey.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
-    overflow: hidden;
-}*/
+    overflow: hidden;*/
+    /*background: url(../images/websitebackground.jpg);
+    background-size: cover;*/
+}
 
 footer {
     clear: both;

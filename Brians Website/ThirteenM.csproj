@@ -1,8 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\fontawsome\**" />
+    <Content Remove="wwwroot\fontawsome\**" />
+    <EmbeddedResource Remove="wwwroot\fontawsome\**" />
+    <None Remove="wwwroot\fontawsome\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Views\Home\Privacy.cshtml" />
@@ -16,39 +23,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
     <PackageReference Include="RestSharp" Version="106.6.10" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\fontawsome\fonts\fontawesome-webfont.svg" />
-    <None Include="wwwroot\fontawsome\fonts\fontawesome-webfont.woff2" />
-    <None Include="wwwroot\fontawsome\less\animated.less" />
-    <None Include="wwwroot\fontawsome\less\bordered-pulled.less" />
-    <None Include="wwwroot\fontawsome\less\core.less" />
-    <None Include="wwwroot\fontawsome\less\fixed-width.less" />
-    <None Include="wwwroot\fontawsome\less\font-awesome.less" />
-    <None Include="wwwroot\fontawsome\less\icons.less" />
-    <None Include="wwwroot\fontawsome\less\larger.less" />
-    <None Include="wwwroot\fontawsome\less\list.less" />
-    <None Include="wwwroot\fontawsome\less\mixins.less" />
-    <None Include="wwwroot\fontawsome\less\path.less" />
-    <None Include="wwwroot\fontawsome\less\rotated-flipped.less" />
-    <None Include="wwwroot\fontawsome\less\screen-reader.less" />
-    <None Include="wwwroot\fontawsome\less\stacked.less" />
-    <None Include="wwwroot\fontawsome\less\variables.less" />
-    <None Include="wwwroot\fontawsome\scss\font-awesome.scss" />
-    <None Include="wwwroot\fontawsome\scss\_animated.scss" />
-    <None Include="wwwroot\fontawsome\scss\_bordered-pulled.scss" />
-    <None Include="wwwroot\fontawsome\scss\_core.scss" />
-    <None Include="wwwroot\fontawsome\scss\_fixed-width.scss" />
-    <None Include="wwwroot\fontawsome\scss\_icons.scss" />
-    <None Include="wwwroot\fontawsome\scss\_larger.scss" />
-    <None Include="wwwroot\fontawsome\scss\_list.scss" />
-    <None Include="wwwroot\fontawsome\scss\_mixins.scss" />
-    <None Include="wwwroot\fontawsome\scss\_path.scss" />
-    <None Include="wwwroot\fontawsome\scss\_rotated-flipped.scss" />
-    <None Include="wwwroot\fontawsome\scss\_screen-reader.scss" />
-    <None Include="wwwroot\fontawsome\scss\_stacked.scss" />
-    <None Include="wwwroot\fontawsome\scss\_variables.scss" />
   </ItemGroup>
 
 </Project>
