@@ -18,9 +18,14 @@ namespace Brians_Website.Controllers
 {
     public class ApiController : Controller
     {
-        private static readonly HttpClient client = new HttpClient();
-
         public ActionResult Api() => View();
+
+        [Route("ApiController/Travel")]
+        public ActionResult Travel()
+        {
+            var model = new CheckAPIModel();
+            return View("~/Views/Api/Travel.cshtml", model);
+        }
 
         [HttpPost]
         public ActionResult TravelApi(CheckAPIModel model)
@@ -36,12 +41,19 @@ namespace Brians_Website.Controllers
                     model.BusData = new ApiHelper().GetBusTimes(model.BusStation);
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return View("~/Views/Shared/Error.cshtml");
             }
 
-            return View("~/Views/Api/Api.cshtml", model);
+            return View("~/Views/Api/Travel.cshtml", model);
+        }
+
+        [Route("ApiController/Dictionary")]
+        public ActionResult Dictionary()
+        {
+            var model = new CheckAPIModel();
+            return View("~/Views/Api/Dictionary.cshtml", model);
         }
 
         [HttpPost]
@@ -49,7 +61,14 @@ namespace Brians_Website.Controllers
         {
             model.DictionaryData = new ApiHelper().GetSearchedWord(model.WordToSearch);
 
-            return View("~/Views/Api/Api.cshtml", model);
+            return View("~/Views/Api/Dictionary.cshtml", model);
+        }
+
+        [Route("ApiController/Currency")]
+        public ActionResult Currency()
+        {
+            var model = new CheckAPIModel();
+            return View("~/Views/Api/Currency.cshtml", model);
         }
 
         [HttpPost]
@@ -58,8 +77,9 @@ namespace Brians_Website.Controllers
 
             model.CurrencyList = GetCurrencyList();
 
-            return View("~/Views/Api/Api.cshtml", model);
+            return View("~/Views/Api/Currency.cshtml", model);
         }
+
 
         [Route("ApiController/NewsApi")]
         public ActionResult NewsApi()
@@ -69,7 +89,7 @@ namespace Brians_Website.Controllers
             CheckAPIModel model = new CheckAPIModel();
             model.NewsData = mod;
 
-            return View("~/Views/Api/Api.cshtml", model);
+            return View("~/Views/Api/News.cshtml", model);
         }
 
         private SelectList GetCurrencyList()

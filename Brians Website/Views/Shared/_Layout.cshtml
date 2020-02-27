@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Thirteen M</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/css/all.min.css">
 </head>
 <body>
+    @*<div class="logo"><a href="#"><img src="~/images/13Mlogo.png"></a></div>*@
     <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index" id="alogo"><img src="~/images/logoTrans.png" id="logo"></a></li>
                 <li><a asp-area="" asp-controller="About" asp-action="About">About</a></li>
                 <li><a asp-area="" asp-controller="Games" asp-action="Games">Games</a></li>
                 <li><a asp-area="" asp-controller="Visuals" asp-action="Visuals">Visuals</a></li>
@@ -27,7 +29,7 @@
     <div class="container body-content">
         <footer id="footerbar">
             <hr />
-            <p>&copy; 2019 - Brians Website V.1.1</p>
+            <p>&copy; 2019 - 13 M V.1.5</p>
         </footer>
         @RenderBody();
     </div>

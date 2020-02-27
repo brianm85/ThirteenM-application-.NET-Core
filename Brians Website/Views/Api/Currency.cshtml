@@ -1,6 +1,7 @@
 ﻿@model CheckAPIModel
 @{
-    ViewData["Title"] = "Api";
+    ViewData["Title"] = "Currency";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     var modeldata = Model;
     var selectList = new SelectList(
     new List<SelectListItem>
@@ -9,7 +10,7 @@
                 new SelectListItem {Text = "Euro", Value = "Euro"},
                 new SelectListItem {Text = "British Pound", Value = "BPD"},
                 new SelectListItem {Text = "Aus Dollor", Value = "AUD"},
-    }, "Value", "Text");
+            }, "Value", "Text");
 }
 <h2>Api</h2>
 <div class="sidenav">
@@ -21,41 +22,37 @@
         <li><button class="buttonblock" onclick="showPremResults()">Results</button></li>
     </ul>
 </div>
-<div class="textbox" id="DictionaryTextBox" display="none">
-    <h3 class="centreheader" id="DictionaryApi"><u>Dictionary</u></h3>
+<div class="textbox" id="CurrencyTextBox">
+    <h3 class="centreheader" id="CurrencyApi"><u>Currency</u></h3>
     <br />
-    <div id="divdisplayDictionary">
-        @using (Html.BeginForm("DictionaryApi", "Api", FormMethod.Post))
+    <div id="divdisplayCurrency">
+        @using (Html.BeginForm("CurrencyApi", "Api", FormMethod.Post))
         {
-            <table>
-                <tr>@Html.LabelFor(m => m.WordToSearch)</tr>
-                <tr>@Html.TextBoxFor(m => m.WordToSearch)</tr>
-            </table>
+            <div>
+                <span>
+                    @Html.DropDownListFor(m => m.CurrencyToConvert,
+                        selectList,
+                        "Convert From")
 
-            <input type="submit" value="Search" />
-        }
-        @if (modeldata?.DictionaryData != null)
-        {
-            //call the same load as side menu from JS
-            <h3>@Model.DictionaryData.Lexical</h3>
+                    @Html.DropDownListFor(m => m.CurrencyConverted,
+                        selectList,
+                        "Convert To")
 
-            <ul style="list-style-type:circle;">
-                @foreach (var item in modeldata.DictionaryData.Definitions)
-                {
-                    <li>@item</li>
-                }
-            </ul>
-            <script>showDictionary();</script>
+                    @Html.LabelFor(m => m.AmmountToConvert)
+                    @Html.TextBoxFor(m => m.AmmountToConvert)
+
+                    <input type="submit" value="Currency" />
+                </span>
+            </div>
         }
     </div>
 </div>
-
-
 <script>
     $(document).ready(function () {
-        document.getElementById("CurrencyTextBox").style.display = "none";
-        document.getElementById("DictionaryTextBox").style.display = "block";
+        document.getElementById("CurrencyTextBox").style.display = "block";
+        document.getElementById("DictionaryTextBox").style.display = "none";
         document.getElementById("TravelTextBox").style.display = "none";
         document.getElementById("NewsTextBox").style.display = "none";
     })
 </script>
+

@@ -1,0 +1,47 @@
+﻿<div class="sidenav">
+    <ul class="sidemenu">
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("DictionaryApi", "ApiController")'">Dictionary</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("Api", "ApiController")'">Currency</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("TravelApi", "ApiController")'">Travel</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("NewsApi", "ApiController")'">News</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("ResultsApi", "ApiController")'">Results</button></li>
+    </ul>
+</div>
+<script>
+    $(document).ready(function () {
+        document.getElementById("TravelTextBox").style.display = "block";
+        document.getElementById("CurrencyTextBox").style.display = "none";
+        document.getElementById("DictionaryTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "none";
+    })
+
+    function showTravel() {
+        document.getElementById("TravelTextBox").style.display = "block";
+        document.getElementById("CurrencyTextBox").style.display = "none";
+        document.getElementById("DictionaryTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "none";
+    }
+
+    function showCurrency() {
+        document.getElementById("CurrencyTextBox").style.display = "block";
+        document.getElementById("DictionaryTextBox").style.display = "none";
+        document.getElementById("TravelTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "none";
+    }
+
+    function showDictionary() {
+        document.getElementById("CurrencyTextBox").style.display = "none";
+        document.getElementById("DictionaryTextBox").style.display = "block";
+        document.getElementById("TravelTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "none";
+    }
+
+    function showNews() {
+        document.getElementById("CurrencyTextBox").style.display = "none";
+        document.getElementById("DictionaryTextBox").style.display = "none";
+        document.getElementById("TravelTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "block";
+
+
+    }
+</script>

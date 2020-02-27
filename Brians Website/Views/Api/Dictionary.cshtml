@@ -1,15 +1,8 @@
 ﻿@model CheckAPIModel
 @{
-    ViewData["Title"] = "Api";
+    ViewData["Title"] = "Dictionary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     var modeldata = Model;
-    var selectList = new SelectList(
-    new List<SelectListItem>
-    {
-                new SelectListItem {Text = "US Dollor", Value = "USD"},
-                new SelectListItem {Text = "Euro", Value = "Euro"},
-                new SelectListItem {Text = "British Pound", Value = "BPD"},
-                new SelectListItem {Text = "Aus Dollor", Value = "AUD"},
-    }, "Value", "Text");
 }
 <h2>Api</h2>
 <div class="sidenav">
@@ -49,8 +42,6 @@
         }
     </div>
 </div>
-
-
 <script>
     $(document).ready(function () {
         document.getElementById("CurrencyTextBox").style.display = "none";
@@ -59,3 +50,4 @@
         document.getElementById("NewsTextBox").style.display = "none";
     })
 </script>
+

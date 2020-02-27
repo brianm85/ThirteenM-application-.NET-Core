@@ -27,6 +27,15 @@ footer {
     margin-top: -200px;
 }
 
+#alogo {
+    padding-top: 9px;
+    padding-right: 9px;
+    padding-left: 0px;
+}
+
+#logo {
+    width: 80px;
+}
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -65,6 +74,15 @@ footer {
     margin: 15px;
     opacity: .7;
 }
+
+.textboxitem {
+    background: #b9b9be;
+    border-style: hidden;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 15px;
+}
+
 .centreheader {
     text-align: center;
 }
@@ -89,6 +107,9 @@ footer {
     color: yellow;
 }
 
+#navbar {
+
+}
 /*.navbar-header {
     background: transparent;
     opacity: .7;
