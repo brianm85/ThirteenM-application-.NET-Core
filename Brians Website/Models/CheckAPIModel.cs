@@ -23,10 +23,10 @@ namespace Brians_Website.Models
         public double AmmountToConvert { get; set; }
 
         [Display(Name = "To")]
-        public string ConvertedCurrency { get; set; }
+        public string CurrencyTo { get; set; }
 
         [Display(Name = "From")]
-        public string CurrencyToConvert { get; set; }
+        public string CurrencyFrom { get; set; }
 
         [Display(Name = "Currency after")]
         public double CurrencyConverted { get; set; }

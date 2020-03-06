@@ -20,15 +20,15 @@ namespace Brians_Website.Controllers
     {
         public ActionResult Api() => View();
 
-        [Route("ApiController/Travel")]
-        public ActionResult Travel()
+        [Route("ApiController/TrainTimes")]
+        public ActionResult TrainTimes()
         {
             var model = new CheckAPIModel();
             return View("~/Views/Api/Travel.cshtml", model);
         }
 
         [HttpPost]
-        public ActionResult TravelApi(CheckAPIModel model)
+        public ActionResult TrainTimesApi(CheckAPIModel model)
         {
             try
             {
@@ -36,7 +36,28 @@ namespace Brians_Website.Controllers
                 {
                     model.TrainData = new ApiHelper().GetTrainData(model.TrainStation);
                 }
-                else
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
+
+            return View("~/Views/Api/Travel.cshtml", model);
+        }
+
+        [Route("ApiController/BusStopInfo")]
+        public ActionResult BusStopInfo()
+        {
+            var model = new CheckAPIModel();
+            return View("~/Views/Api/BusStopInfo.cshtml", model);
+        }
+
+        [HttpPost]
+        public ActionResult BusStopInfoApi(CheckAPIModel model)
+        {
+            try
+            {
+                if (model.BusStation != null) //make new class to call for APIs
                 {
                     model.BusData = new ApiHelper().GetBusTimes(model.BusStation);
                 }
@@ -46,7 +67,7 @@ namespace Brians_Website.Controllers
                 return View("~/Views/Shared/Error.cshtml");
             }
 
-            return View("~/Views/Api/Travel.cshtml", model);
+            return View("~/Views/Api/BusStopInfo.cshtml", model);
         }
 
         [Route("ApiController/Dictionary")]
@@ -59,9 +80,16 @@ namespace Brians_Website.Controllers
         [HttpPost]
         public ActionResult DictionaryApi(CheckAPIModel model)
         {
-            model.DictionaryData = new ApiHelper().GetSearchedWord(model.WordToSearch);
+            try
+            {
+                model.DictionaryData = new ApiHelper().GetSearchedWord(model.WordToSearch);
 
-            return View("~/Views/Api/Dictionary.cshtml", model);
+                return View("~/Views/Api/Dictionary.cshtml", model);
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
         [Route("ApiController/Currency")]
@@ -74,22 +102,36 @@ namespace Brians_Website.Controllers
         [HttpPost]
         public ActionResult CurrencyApi(CheckAPIModel model)
         {
+            try
+            {
+                var bla = new ApiHelper().GetCurrency(model);
+                model.CurrencyList = GetCurrencyList();
 
-            model.CurrencyList = GetCurrencyList();
-
-            return View("~/Views/Api/Currency.cshtml", model);
+                return View("~/Views/Api/Currency.cshtml", model);
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
 
         [Route("ApiController/NewsApi")]
         public ActionResult NewsApi()
         {
-            var mod = new ApiHelper().GetNews();
+            try
+            {
+                var mod = new ApiHelper().GetNews();
 
-            CheckAPIModel model = new CheckAPIModel();
-            model.NewsData = mod;
+                CheckAPIModel model = new CheckAPIModel();
+                model.NewsData = mod;
 
-            return View("~/Views/Api/News.cshtml", model);
+                return View("~/Views/Api/News.cshtml", model);
+            }
+            catch (Exception)
+            {
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
         private SelectList GetCurrencyList()
@@ -97,11 +139,11 @@ namespace Brians_Website.Controllers
             var currencySelectList = new SelectList(
             new List<SelectListItem>
             {
-                        new SelectListItem {Text = "US Dollor", Value = "USD"},
-                        new SelectListItem {Text = "Euro", Value = "Euro"},
-                        new SelectListItem {Text = "British Pound", Value = "BPD"},
-                        new SelectListItem {Text = "Aus Dollor", Value = "AUD"},
-                        ////new SelectListItem {Text = "Irish Punt", Value = "IRP"},
+                new SelectListItem {Text = "US Dollor", Value = "USD"},
+                new SelectListItem {Text = "Euro", Value = "EUR"},
+                new SelectListItem {Text = "British Pound", Value = "GBP"},
+                new SelectListItem {Text = "Aus Dollor", Value = "AUD"},
+                new SelectListItem {Text = "Irish Punt", Value = "IEP"},
             }, 
             "Value", "Text");
 

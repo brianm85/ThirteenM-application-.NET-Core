@@ -16,5 +16,7 @@ namespace Brians_Website.Models
         public string Content { get; set; }
 
         public string Source { get; set; }
+
+        public Uri Link { get; set; }
     }
 }

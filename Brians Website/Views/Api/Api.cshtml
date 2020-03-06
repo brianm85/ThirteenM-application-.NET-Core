@@ -16,7 +16,8 @@
     <ul class="sidemenu">
         <li><button class="buttonblock" onclick="location.href='@Url.Action("Dictionary", "ApiController")'">Dictionary</button></li>
         <li><button class="buttonblock" onclick="location.href='@Url.Action("Currency", "ApiController")'">Currency</button></li>
-        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("Travel", "ApiController")'">Travel</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("BusStopInfo", "ApiController")'">Bus Stop Info</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("TrainTimes", "ApiController")'">Train Times</button></li>
         <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("NewsApi", "ApiController")'">News</button></li>
         <li><button class="buttonblock" onclick="showPremResults()">Results</button></li>
     </ul>
@@ -27,25 +28,27 @@
     <div id="divdisplayDictionary">
         @using (Html.BeginForm("DictionaryApi", "Api", FormMethod.Post))
         {
-            <table>
-                <tr>@Html.LabelFor(m => m.WordToSearch)</tr>
-                <tr>@Html.TextBoxFor(m => m.WordToSearch)</tr>
-            </table>
-
-            <input type="submit" value="Search" />
-        }
+            <div class="labeltext">
+                <span>
+                    @Html.LabelFor(m => m.WordToSearch)
+                </span>
+                <span>
+                    @Html.TextBoxFor(m => m.WordToSearch, new { @style = "text-align:center" })
+            </span>
+            <span>
+                <input class="selectbutton" type="submit" value="Search" />
+            </span>
+        </div>
+    }
         @if (modeldata?.DictionaryData != null)
         {
-            //call the same load as side menu from JS
-            <h3>@Model.DictionaryData.Lexical</h3>
-
+            <h3><em>@Model.DictionaryData.Lexical</em></h3>
             <ul style="list-style-type:circle;">
                 @foreach (var item in modeldata.DictionaryData.Definitions)
                 {
-                    <li>@item</li>
+                    <li><b>@item</b></li>
                 }
             </ul>
-            <script>showDictionary();</script>
         }
     </div>
 </div>

@@ -6,18 +6,20 @@
     var selectList = new SelectList(
     new List<SelectListItem>
     {
-                new SelectListItem {Text = "US Dollor", Value = "USD"},
-                new SelectListItem {Text = "Euro", Value = "Euro"},
-                new SelectListItem {Text = "British Pound", Value = "BPD"},
-                new SelectListItem {Text = "Aus Dollor", Value = "AUD"},
-            }, "Value", "Text");
+        new SelectListItem {Text = "US Dollor", Value = "USD"},
+        new SelectListItem {Text = "Euro", Value = "EUR"},
+        new SelectListItem {Text = "British Pound", Value = "GBP"},
+        new SelectListItem {Text = "Aus Dollor", Value = "AUD"},
+        new SelectListItem {Text = "Irish Punt", Value = "IEP"},
+    }, "Value", "Text");
 }
 <h2>Api</h2>
 <div class="sidenav">
     <ul class="sidemenu">
         <li><button class="buttonblock" onclick="location.href='@Url.Action("Dictionary", "ApiController")'">Dictionary</button></li>
         <li><button class="buttonblock" onclick="location.href='@Url.Action("Currency", "ApiController")'">Currency</button></li>
-        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("Travel", "ApiController")'">Travel</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("BusStopInfo", "ApiController")'">Bus Stop Info</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("TrainTimes", "ApiController")'">Train Times</button></li>
         <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("NewsApi", "ApiController")'">News</button></li>
         <li><button class="buttonblock" onclick="showPremResults()">Results</button></li>
     </ul>
@@ -30,11 +32,11 @@
         {
             <div>
                 <span>
-                    @Html.DropDownListFor(m => m.CurrencyToConvert,
+                    @Html.DropDownListFor(m => m.CurrencyFrom,
                         selectList,
                         "Convert From")
 
-                    @Html.DropDownListFor(m => m.CurrencyConverted,
+                    @Html.DropDownListFor(m => m.CurrencyTo,
                         selectList,
                         "Convert To")
 

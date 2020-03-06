@@ -9,7 +9,8 @@
     <ul class="sidemenu">
         <li><button class="buttonblock" onclick="location.href='@Url.Action("Dictionary", "ApiController")'">Dictionary</button></li>
         <li><button class="buttonblock" onclick="location.href='@Url.Action("Currency", "ApiController")'">Currency</button></li>
-        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("Travel", "ApiController")'">Travel</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("BusStopInfo", "ApiController")'">Bus Stop Info</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("TrainTimes", "ApiController")'">Train Times</button></li>
         <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("NewsApi", "ApiController")'">News</button></li>
         <li><button class="buttonblock" onclick="showPremResults()">Results</button></li>
     </ul>
@@ -26,6 +27,8 @@
                     <h3>@item.Title</h3>
                     <p>@item.Description</p>
                     <p>@item.Content</p>
+                    @*<p><a href="{@item.Link}"></a></p>*@
+                    <p><a href="@item.Link">Go to article</a></p>
                     <p>@item.Author - @item.Source</p>
                 </div>
             }

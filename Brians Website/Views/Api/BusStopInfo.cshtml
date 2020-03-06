@@ -1,0 +1,79 @@
+﻿@model CheckAPIModel
+@{
+    ViewData["Title"] = "Travel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var modeldata = Model;
+}
+<h2>Api</h2>
+<div class="sidenav">
+    <ul class="sidemenu">
+        <li><button class="buttonblock" onclick="location.href='@Url.Action("Dictionary", "ApiController")'">Dictionary</button></li>
+        <li><button class="buttonblock" onclick="location.href='@Url.Action("Currency", "ApiController")'">Currency</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("BusStopInfo", "ApiController")'">Bus Stop Info</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("TrainTimes", "ApiController")'">Train Times</button></li>
+        <li><button class="buttonblock" type="button" onclick="location.href='@Url.Action("NewsApi", "ApiController")'">News</button></li>
+        <li><button class="buttonblock" onclick="showPremResults()">Results</button></li>
+    </ul>
+</div>
+<div class="textbox" id="BusTravelTextBox">
+    <h3 class="centreheader" id="TravelApi"><u>Travel</u></h3>
+    <br />
+    <div id="divdisplayTravel">
+        @using (Html.BeginForm("BusStopInfoApi", "Api", FormMethod.Post))
+        {
+            @Html.LabelFor(m => m.BusStation)
+            @Html.TextBoxFor(m => m.BusStation)
+
+            <input type="submit" value="Travel" />
+        }
+        @if (modeldata?.BusData != null)
+        {
+            <br />
+            <table style="width:100%">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>Full Name</th>
+                        <th>Longitude</th>
+                        <th>Latitude</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.BusData.Fullname</td>
+                        <td>@Model.BusData.Longitude</td>
+                        <td>@Model.BusData.Latitude</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <table style="width:100%">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>Couriour</th>
+                        <th>Routes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.BusData.Name</td>
+                        @foreach (var item in Model.BusData.RouteNumbers)
+                        {
+                            <td>@item,</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        }
+        <script>showTravel();</script>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        document.getElementById("BusTravelTextBox").style.display = "block";
+        document.getElementById("TrainTravelTextBox").style.display = "none";
+        document.getElementById("CurrencyTextBox").style.display = "none";
+        document.getElementById("DictionaryTextBox").style.display = "none";
+        document.getElementById("NewsTextBox").style.display = "none";
+    })
+</script>
+

@@ -15,12 +15,11 @@ namespace Brians_Website.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult DictionaryApi(CheckAPIModel model)
-        {
-            model.DictionaryData = new ApiHelper().GetSearchedWord(model.WordToSearch);
 
-            return PartialView("~/Views/Shared/_DictionaryApi.cshtml", model);
+        [Route("GamesController/DownloadCV")]
+        public ActionResult CVDownload()
+        {
+            return View("~/Views/Visuals/DownloadCV.cshtml");
         }
     }
 }

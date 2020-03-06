@@ -1,6 +1,7 @@
 ﻿using Brians_Website.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,6 +10,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
+using ThirteenM.Models;
 
 namespace Brians_Website.Helpers
 {
@@ -179,11 +181,35 @@ namespace Brians_Website.Helpers
                     Author = item.author.Value,
                     Title = item.title.Value,
                     Description = item.description.Value,
-                    Content = item.content.Value
+                    Content = item.content.Value,
+                    Link = new Uri(item.url.Value)
                 });
             }
 
             return model;
         }
+
+        public string GetCurrency(CheckAPIModel model)
+        {
+            var curFrom = model.CurrencyFrom;
+            var curTo = model.CurrencyTo;
+            var amt = model.AmmountToConvert.ToString();
+            var st = "https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=" + curFrom + "&to=" + curTo + "&amount=" + amt;
+            var client = new RestClient(st);
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("x-rapidapi-host", "currency-converter5.p.rapidapi.com");
+            request.AddHeader("x-rapidapi-key", "7d8d99d373mshc3117de52882fb3p1e2c5djsnac4bb85ece25");
+            IRestResponse response = client.Execute(request);
+
+            dynamic data = JObject.Parse(response.Content);
+            var ba = data.rates.Value; //FIX ME rates { key, value [values ]}
+            var userObj = JsonConvert.DeserializeObject<ApiCurrencyConverterModel>(ba);
+
+
+
+            return null;
+        }
+
+
     }
 }
